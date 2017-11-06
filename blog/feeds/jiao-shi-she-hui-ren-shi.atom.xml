@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Code4future - 教師, 社會人士</title><link href="http://www.code4future.org/blog/" rel="alternate"></link><link href="http://www.code4future.org/blog/feeds/jiao-shi-she-hui-ren-shi.atom.xml" rel="self"></link><id>http://www.code4future.org/blog/</id><updated>2017-11-05T10:00:00+08:00</updated><entry><title>靜態網頁、網址與相關工具</title><link href="http://www.code4future.org/blog/c4f-static-site-domain-and-leo-editor.html" rel="alternate"></link><published>2017-11-05T10:00:00+08:00</published><updated>2017-11-05T10:00:00+08:00</updated><author><name>Code4Future</name></author><id>tag:www.code4future.org,2017-11-05:/blog/c4f-static-site-domain-and-leo-editor.html</id><summary type="html">&lt;p&gt;靜態網頁的流行不僅是全球資訊網歸樸返真的一種表現, 也是 Html5 + Javascript 全面主導瀏覽器端檔案文件的證明. &lt;/p&gt;
+</summary><content type="html">&lt;p&gt;靜態網頁的流行不僅是全球資訊網歸樸返真的一種表現, 也是 Html5 + Javascript 全面主導瀏覽器端檔案文件的證明. &lt;/p&gt;
+
+
+&lt;h3&gt;從動態網頁轉成靜態網頁&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://www.code4future.org"&gt;http://www.code4future.org&lt;/a&gt; 原本使用 Wordpress 動態網誌系統, 寄存在 OpenShift 平台中的雲端空間, 2017 年 9 月起, 各項 OpenShift Online2 服務陸續終止, 因此目前的網站採用 Pelican 靜態網頁格式, 以 Leo Editor 管理 Markdown 檔案的編輯, 近端頁面檢視, 並且將資料轉存到 &lt;a href="https://github.com/code4futuredotcom/code4futuredotcom.github.io"&gt;https://github.com/code4futuredotcom/code4futuredotcom.github.io&lt;/a&gt; 倉儲.&lt;/p&gt;
+&lt;p&gt;這一項轉變讓擷取網誌的 URL 連結前後不同, 因此先前與 code4future.org 對應的 disqus 留言相關連結, 將會失效, 而且在 Wordpress 系統中利用瀏覽器登入後新增或編輯網誌內容的模式也完全不同.&lt;/p&gt;
+&lt;p&gt;但是, 最大的優點是整體系統的內容因為 Git 系統的導入, 每一項改變都將會留下版本, 因此之後任何人都能夠透過 git checkout 指令, 檢視本網誌任一時段下的內容.&lt;/p&gt;
+&lt;p&gt;為了簡化協同者推送靜態網誌版本的流程, 我們決定在 Windows 10 64 bit 的環境中建立一個, 能夠放在隨身碟中的可攜 Python3 程式環境, 只要執行 start.bat 就可以啟動 Leo Editor, 系統中還包括 Git client 工具與 Pelican 模組, 也可以在新增網誌內容後, 利用 Pelican 指令將 Markdown 格式的網誌轉成 html 後透過近端的 IPv4 或 IPv6 WWW 伺服器檢查內容.&lt;/p&gt;
+&lt;h3&gt;建立 Windows 可攜程式環境&lt;/h3&gt;
+&lt;p&gt;首先安裝 python 3.6.3, 接著建立啟動與關閉可攜系統的批次檔案, start.bat 與 stop.bat&lt;/p&gt;
+&lt;p&gt;start.bat&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@echo&lt;/span&gt; &lt;span class="n"&gt;off&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;設定&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="err"&gt;硬碟代號與&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="err"&gt;目錄對應&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;
+&lt;span class="n"&gt;subst&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;data&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;設定&lt;/span&gt; &lt;span class="n"&gt;leo&lt;/span&gt; &lt;span class="err"&gt;相關對應&lt;/span&gt; &lt;span class="n"&gt;Home&lt;/span&gt; &lt;span class="err"&gt;位置&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="n"&gt;HomePath&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;home&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="n"&gt;HomeDrive&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;home&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="n"&gt;Home&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;home&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;將系統&lt;/span&gt; &lt;span class="n"&gt;Python&lt;/span&gt; &lt;span class="err"&gt;程式的&lt;/span&gt; &lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="err"&gt;設為&lt;/span&gt; &lt;span class="n"&gt;utf&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="n"&gt;PYTHONIOENCODING&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;將後續的指令執行&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;以&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="err"&gt;為主&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;設定&lt;/span&gt; &lt;span class="n"&gt;PYTHONPATH&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="n"&gt;PYTHONPATH&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;python36&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;設定&lt;/span&gt; &lt;span class="n"&gt;Leo&lt;/span&gt; &lt;span class="err"&gt;所用的編輯器&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="n"&gt;LEO_EDITOR&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;wscite&lt;/span&gt;\&lt;span class="n"&gt;SciTE&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;fossil&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt; &lt;span class="err"&gt;連線設定&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;若在近端使用&lt;/span&gt; &lt;span class="n"&gt;fossil&lt;/span&gt; &lt;span class="n"&gt;ui&lt;/span&gt; &lt;span class="err"&gt;則要蓋掉&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="n"&gt;HTTPS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;指令搜尋路徑設定&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="n"&gt;path1&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;python36&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;git&lt;/span&gt;\&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;python36&lt;/span&gt;\&lt;span class="n"&gt;Scripts&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;Git&lt;/span&gt;\&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;path1&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;MIN&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;wscite&lt;/span&gt;\&lt;span class="n"&gt;SciTE&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt;
+&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;MIN&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;wscite&lt;/span&gt;\&lt;span class="n"&gt;SciTE&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt;
+&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;MIN&lt;/span&gt; &lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt;
+&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;MIN&lt;/span&gt; &lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;啟動&lt;/span&gt; &lt;span class="n"&gt;Leo&lt;/span&gt; &lt;span class="err"&gt;編輯器&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;Python36&lt;/span&gt;\&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;launchLeo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;啟動&lt;/span&gt; &lt;span class="n"&gt;stunnel&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;MIN&lt;/span&gt; &lt;span class="n"&gt;fossil&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;P&lt;/span&gt; &lt;span class="mf"&gt;127.0&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;8080&lt;/span&gt;
+    &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;tmp&lt;/span&gt;\&lt;span class="n"&gt;fossil_repo&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;MIN&lt;/span&gt; &lt;span class="n"&gt;stunnel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt;
+&lt;span class="n"&gt;Exit&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;stop.bat&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@echo&lt;/span&gt; &lt;span class="n"&gt;off&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;關閉&lt;/span&gt; &lt;span class="n"&gt;SciTE&lt;/span&gt;
+&lt;span class="n"&gt;taskkill&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;IM&lt;/span&gt; &lt;span class="n"&gt;SciTE&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;關閉&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+&lt;span class="n"&gt;taskkill&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;IM&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt;
+&lt;span class="n"&gt;taskkill&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;IM&lt;/span&gt; &lt;span class="n"&gt;pythonw&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt;
+&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="n"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;終止虛擬硬碟與目錄的對應&lt;/span&gt;
+&lt;span class="n"&gt;subst&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;D&lt;/span&gt;
+&lt;span class="n"&gt;REM&lt;/span&gt; &lt;span class="err"&gt;關閉&lt;/span&gt; &lt;span class="n"&gt;cmd&lt;/span&gt; &lt;span class="err"&gt;指令視窗&lt;/span&gt;
+&lt;span class="n"&gt;taskkill&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;IM&lt;/span&gt; &lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt;
+&lt;span class="n"&gt;EXIT&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;接著下載 wscite 編輯器, 主要用來編輯文字檔案, 然後下載 Git, 最後在 Python 3.6.3 系統中安裝 PyQt5, pelican, bs4 (beatuifulsoup), 以及 Markdown 模組.&lt;/p&gt;
+&lt;p&gt;python -m pip install pyqt5 pelican bs4 Markdown pillow&lt;/p&gt;
+&lt;p&gt;最後從 &lt;a href="https://github.com/leo-editor/leo-editor/releases"&gt;https://github.com/leo-editor/leo-editor/releases&lt;/a&gt; 下載 Leo Editor 最新的原始碼, 放入 Python36/Lib/site-packages 目錄中就完成可攜系統的建立.&lt;/p&gt;
+&lt;h3&gt;IPv4 WWW server&lt;/h3&gt;
+&lt;p&gt;接著為了能夠在利用 Pelican 將 Markdown 格式的網誌轉為 html 後, 能夠在近端檢查內容, 利用下列 Python3 程式碼建立 https 協定的 WWW 伺服器:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;threading&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;http.server&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;ssl&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;domake&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="c1"&gt;# build directory&lt;/span&gt;
+    &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;chdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./../&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;server_address&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5443&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;httpd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HTTPServer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server_address&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \
+        &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SimpleHTTPRequestHandler&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;socket&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ssl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wrap_socket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="n"&gt;server_side&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="n"&gt;certfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;localhost.crt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="n"&gt;keyfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;localhost.key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;ssl_version&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ssl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PROTOCOL_TLSv1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getcwd&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;5443 https server started&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;serve_forever&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 利用執行緒執行 https 伺服器&lt;/span&gt;
+&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;threading&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;domake&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;make&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;假如是在 IPv6 網路協定下, 則使用下列程式碼:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;threading&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;socket&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;http.server&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;ssl&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;HTTPServerV6&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HTTPServer&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;address_family&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AF_INET6&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;domake&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="c1"&gt;# build directory&lt;/span&gt;
+    &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;chdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./../&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;ipv6_address&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;::1&amp;#39;&lt;/span&gt;
+    &lt;span class="n"&gt;server_address&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ipv6_address&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6443&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="c1"&gt;#httpd = http.server.HTTPServer(server_address, \&lt;/span&gt;
+        &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SimpleHTTPRequestHandler&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;httpd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;HTTPServerV6&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server_address&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \
+        &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SimpleHTTPRequestHandler&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;socket&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ssl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wrap_socket&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+              &lt;span class="n"&gt;server_side&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+              &lt;span class="n"&gt;certfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;localhost.crt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+              &lt;span class="n"&gt;keyfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;localhost.key&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+              &lt;span class="n"&gt;ssl_version&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ssl&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PROTOCOL_TLSv1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;6443 https server started&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;serve_forever&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 利用執行緒執行 https 伺服器&lt;/span&gt;
+&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;threading&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;target&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;domake&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;make&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Git and Github&lt;/h3&gt;
+&lt;p&gt;git 在 Windows 64 位元操作系統下的 client 程式, 可以從 &lt;a href="https://git-scm.com/downloads"&gt;https://git-scm.com/downloads&lt;/a&gt; 下載. 這裡選擇下載 git 的可攜版本. &lt;/p&gt;
+&lt;p&gt;至於 git client for Windows 的 config 檔案總共有三個層次, 分別為 Local config, 設定檔案存在各倉儲的 .git\config 檔案中.&lt;/p&gt;
+&lt;p&gt;System 層級的 config 存在 Git\mingw64\etc\gitconfig 檔案中. 而 Global 層級的 config 存在 $HOME.gitconfig 檔案中.&lt;/p&gt;
+&lt;p&gt;其中因為 Windows 版本的 Git, 其 System 層級的 config 內建將 credential 中的 helper 設為 manager, 因此 Git 內定會利用 OpenSSH credentials popup 視窗讀取使用者的帳號密碼, 然後存入 Windows Credential 中.&lt;/p&gt;
+&lt;p&gt;假如要取消 OpenSSH credentials popup 視窗, 必須設定 System config core 區域中的 askpass = &lt;/p&gt;
+&lt;h3&gt;DNS, CNAME and 301 and html redirect&lt;/h3&gt;
+&lt;p&gt;接著, 為了讓 Github Pages 可以綁定客製 domain name, 在 DNS 伺服器端, 必須先用 CNAME 將 code4futuredotcom.github.io 網站符號名稱設為 www.code4future.org 的別名, 然後再將 code4future.org 以伺服器端的 301 redirect 到 www.code4future.org.&lt;/p&gt;
+&lt;p&gt;至於在 Github Pages 端則在倉儲檔案中, 加入一個 CNAME 檔案, 內容為 www.code4future.org, 表示接受 DNS 伺服器將 code4futuredotcom.github.io 設為 www.code4future.org 符號名稱的別名.&lt;/p&gt;
+&lt;p&gt;最後, 為了完整保留 Pelican 靜態網誌系統倉儲的所有檔案, &lt;a href="https://github.com/code4futuredotcom/code4futuredotcom.github.io"&gt;https://github.com/code4futuredotcom/code4futuredotcom.github.io&lt;/a&gt; 不僅包含 blog 目錄中的網誌 html 檔案, 就連 content 目錄中的 .md 檔案, 以及所有與靜態系統設定有關的所有內容, 全部都保存在倉儲中, 因此 Github Pages 倉儲中的 index.html 必須透過 URL redirect 設定轉址到 ./blog/index.html&lt;/p&gt;
+&lt;h3&gt;下載 Code4Future 可攜程式系統&lt;/h3&gt;
+&lt;p&gt;Windows 64 位元專用的 Python 3.6.3 可攜程式系統:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://drive.google.com/file/d/0By4e5HVwfNpDLUh1cHNLeUZKQ1k/view?usp=sharing"&gt;c4f_portable.zip&lt;/a&gt;&lt;/p&gt;</content><category term="pelican"></category><category term="domain"></category><category term="leo editor"></category></entry></feed>
