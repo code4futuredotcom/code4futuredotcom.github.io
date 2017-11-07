@@ -13,7 +13,7 @@
 <v t="leo.20151212173315.2"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="leo.20151212173315.3"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
-<v t="leo.20171104213755.1"><vh>@button https server</vh></v>
+<v t="leo.20171104213755.1"><vh>@button www server</vh></v>
 <v t="leo.20171105094839.1"><vh>@button ipv6 https server</vh></v>
 <v t="amd.20160306101815.1"><vh>網站規劃</vh>
 <v t="amd.20160306101823.1"><vh>code4future.org</vh></v>
@@ -33,7 +33,7 @@
 <v t="amd.20160320145431.1"><vh>有關 reeborg</vh></v>
 <v t="amd.20160106095324.1" a="E"><vh>@path ./../</vh>
 <v t="leo.20151213173811.1" a="E"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
-<v t="leo.20151212173658.1"><vh>@button gh-pages pelican</vh></v>
+<v t="leo.20151212173658.1"><vh>@button remote pelican</vh></v>
 </v>
 <v t="leo.20151213173830.1" a="E"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
@@ -208,8 +208,18 @@
 <v t="leo.20171105005414.1"><vh>@edit candi_20170527.md</vh></v>
 </v>
 <v t="leo.20171105103358.1" a="E"><vh>201711</vh>
+<v t="leo.20171107221852.1" a="E"><vh>靜態網頁、網址與相關工具</vh>
 <v t="leo.20171105103424.1"><vh>@edit c4f_20171105.md</vh></v>
+</v>
+<v t="leo.20171107221831.1" a="E"><vh>Pelican 靜態網頁產生器</vh>
 <v t="leo.20171107150705.1"><vh>@edit c4f_20171107.md</vh></v>
+</v>
+<v t="leo.20171107221815.1" a="E"><vh>Leo Editor 簡介</vh>
+<v t="leo.20171107215503.1"><vh>@edit c4f_20171107-1.md</vh></v>
+</v>
+<v t="leo.20171107221802.1" a="E"><vh>建立網誌文章步驟</vh>
+<v t="leo.20171107221504.1"><vh>@edit c4f_20171107-2.md</vh></v>
+</v>
 </v>
 </v>
 </v>
@@ -2192,5 +2202,9 @@ make.start()</t>
 <t tx="leo.20171105220232.1"></t>
 <t tx="leo.20171105220325.1"></t>
 <t tx="leo.20171107153729.1"></t>
+<t tx="leo.20171107221802.1"></t>
+<t tx="leo.20171107221815.1"></t>
+<t tx="leo.20171107221831.1"></t>
+<t tx="leo.20171107221852.1"></t>
 </tnodes>
 </leo_file>

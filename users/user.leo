@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by Leo: http://leoeditor.com/leo_toc.html -->
-<?xml-stylesheet ekr_test ?>
 <leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
 <globals body_outline_ratio="0.5" body_secondary_ratio="0.5">
@@ -14,9 +13,10 @@
 <v t="leo.20151212173315.2"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="leo.20151212173315.3"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
+<v t="leo.20171107223641.1"><vh>@button www server</vh></v>
 <v t="amd.20160106095324.1" a="E"><vh>@path ./../</vh>
 <v t="leo.20151213173811.1" a="E"><vh>假如要送到 gh-pages 分支, 使用下列按鈕</vh>
-<v t="leo.20151212173658.1"><vh>@button gh-pages pelican</vh></v>
+<v t="leo.20151212173658.1"><vh>@button remote pelican</vh></v>
 </v>
 <v t="leo.20151213173830.1" a="E"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
@@ -27,9 +27,16 @@
 <v t="amd.20151216001126.1"><vh>md 檔案範例</vh></v>
 <v t="amd.20151215170031.1" a="E"><vh>@path ./../content</vh>
 <v t="amd.20160106093454.1" a="E"><vh>user 網誌文章</vh>
-<v t="amd.20160106093510.1" a="E"><vh>201602</vh>
-<v t="amd.20160106093531.1" a="E"><vh>w1 - 文章務必要冠上用戶名稱</vh>
+<v t="amd.20160106093510.1"><vh>201602</vh>
+<v t="amd.20160106093531.1"><vh>w1 - 文章務必要冠上用戶名稱</vh>
+<v t="leo.20171107225449.1" a="E"><vh>Code4future user 文章套稿</vh>
 <v t="amd.20160106093542.1"><vh>@edit user_20160225.md</vh></v>
+</v>
+</v>
+</v>
+<v t="leo.20171107225520.1" a="E"><vh>201711</vh>
+<v t="leo.20171107225541.1" a="E"><vh>網誌可利用 Slug 自訂轉檔後的 html 名稱</vh>
+<v t="leo.20171107224014.1"><vh>@edit user_20171107.md</vh></v>
 </v>
 </v>
 </v>
@@ -150,14 +157,12 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="leo.20151212173658.1">@language python
 import os
-#os.system("pelican content -o ./ -s publishconf.py -t theme/pelican-bootstrap3")
 os.system("pelican content -o blog -s publishconf.py")
 g.es("admin pelican 執行完畢")
 
 </t>
 <t tx="leo.20151213085727.1">@language python
 import os
-#os.system("pelican content -o output -s local_publishconf.py -t theme/pelican-bootstrap3")
 os.system("pelican content -o blog -s local_publishconf.py")
 g.es("admin pelican 近端執行完畢")
 
@@ -165,5 +170,31 @@ g.es("admin pelican 近端執行完畢")
 </t>
 <t tx="leo.20151213173811.1"></t>
 <t tx="leo.20151213173830.1"></t>
+<t tx="leo.20171107223641.1">@language python
+import os
+import subprocess
+import threading
+import http.server, ssl
+
+def domake():
+    # build directory
+    os.chdir("./../")
+    server_address = ('localhost', 5443)
+    httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print(os.getcwd())
+    print("5443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()</t>
+<t tx="leo.20171107225449.1"></t>
+<t tx="leo.20171107225520.1"></t>
+<t tx="leo.20171107225541.1"></t>
 </tnodes>
 </leo_file>
