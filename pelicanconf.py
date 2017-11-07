@@ -67,11 +67,15 @@ SITEMAP = {
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
 
 # for pelican-bootstrap3 theme settings
+'''
 #TAG_CLOUD_MAX_ITEMS = 50
 DISPLAY_CATEGORIES_ON_SIDEBAR = True
 DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
 DISPLAY_TAGS_ON_SIDEBAR = True
 DISPLAY_TAGS_INLINE = True
+'''
+# for attila theme
+DISPLAY_CATEGORIES_ON_MENU = True
 TAGS_URL = "tags.html"
 CATEGORIES_URL = "categories.html"
 #MENUITEMS = [('About', 'pages/about/')]
