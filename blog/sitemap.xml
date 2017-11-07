@@ -4,728 +4,728 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://www.code4future.org/blog/</loc>
-<lastmod>2017-11-07T23:21:22-00:00</lastmod>
+<loc>./</loc>
+<lastmod>2017-11-07T23:31:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/archives.html</loc>
-<lastmod>2017-11-07T23:21:22-00:00</lastmod>
+<loc>./archives.html</loc>
+<lastmod>2017-11-07T23:31:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tags.html</loc>
-<lastmod>2017-11-07T23:21:22-00:00</lastmod>
+<loc>./tags.html</loc>
+<lastmod>2017-11-07T23:31:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/categories.html</loc>
-<lastmod>2017-11-07T23:21:22-00:00</lastmod>
+<loc>./categories.html</loc>
+<lastmod>2017-11-07T23:31:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/pages/about/</loc>
+<loc>./pages/about/</loc>
 <lastmod>2017-11-06T23:14:27+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/c4f-process-to-create-blog-post.html</loc>
+<loc>./c4f-process-to-create-blog-post.html</loc>
 <lastmod>2017-11-07T12:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/user-use-slug-to-name-post-title.html</loc>
+<loc>./user-use-slug-to-name-post-title.html</loc>
 <lastmod>2017-11-07T12:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/c4f-intro-to-leo-editor.html</loc>
+<loc>./c4f-intro-to-leo-editor.html</loc>
 <lastmod>2017-11-07T11:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/c4f-intro-to-pelican-static-blog-generator.html</loc>
+<loc>./c4f-intro-to-pelican-static-blog-generator.html</loc>
 <lastmod>2017-11-07T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/c4f-static-site-domain-and-leo-editor.html</loc>
+<loc>./c4f-static-site-domain-and-leo-editor.html</loc>
 <lastmod>2017-11-05T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/candi-app-development-curriculum.html</loc>
+<loc>./candi-app-development-curriculum.html</loc>
 <lastmod>2017-05-27T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/get-started-on-the-path-to-career-success.html</loc>
+<loc>./get-started-on-the-path-to-career-success.html</loc>
 <lastmod>2017-05-24T12:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/neuroscience-for-kids.html</loc>
+<loc>./neuroscience-for-kids.html</loc>
 <lastmod>2017-05-24T11:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/application-economy-a-world-where-change-is-your-biggest-opportunity.html</loc>
+<loc>./application-economy-a-world-where-change-is-your-biggest-opportunity.html</loc>
 <lastmod>2017-05-24T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/why-code-is-a-language.html</loc>
+<loc>./why-code-is-a-language.html</loc>
 <lastmod>2017-02-03T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/how-coding-can-help-your-child-excel.html</loc>
+<loc>./how-coding-can-help-your-child-excel.html</loc>
 <lastmod>2016-08-16T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/wo-men-ru-he-chu-li-jiu-dian-nao.html</loc>
+<loc>./wo-men-ru-he-chu-li-jiu-dian-nao.html</loc>
 <lastmod>2016-07-24T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/wo-men-ru-he-mian-dui-wang-zhan-bei-hai.html</loc>
+<loc>./wo-men-ru-he-mian-dui-wang-zhan-bei-hai.html</loc>
 <lastmod>2016-07-21T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/creative-problem-solving-led-to-millions-in-savings.html</loc>
+<loc>./creative-problem-solving-led-to-millions-in-savings.html</loc>
 <lastmod>2016-07-19T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/the-trend-of-fashion-design.html</loc>
+<loc>./the-trend-of-fashion-design.html</loc>
 <lastmod>2016-07-18T11:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/digital-transformation.html</loc>
+<loc>./digital-transformation.html</loc>
 <lastmod>2016-07-18T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/wo-men-ren-zhi-zhong-de-suo-wei-gong-ye-40.html</loc>
+<loc>./wo-men-ren-zhi-zhong-de-suo-wei-gong-ye-40.html</loc>
 <lastmod>2016-07-18T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/wo-men-ru-he-jian-li-zhe-ge-wang-zhan-san.html</loc>
+<loc>./wo-men-ru-he-jian-li-zhe-ge-wang-zhan-san.html</loc>
 <lastmod>2016-07-17T11:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/wo-men-ru-he-jian-li-zhe-ge-wang-zhan-er.html</loc>
+<loc>./wo-men-ru-he-jian-li-zhe-ge-wang-zhan-er.html</loc>
 <lastmod>2016-07-17T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/pokemon-go-do-you-play.html</loc>
+<loc>./pokemon-go-do-you-play.html</loc>
 <lastmod>2016-07-15T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/wo-men-ru-he-jian-li-zhe-ge-wang-zhan-yi.html</loc>
+<loc>./wo-men-ru-he-jian-li-zhe-ge-wang-zhan-yi.html</loc>
 <lastmod>2016-07-15T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/wo-men-ru-he-li-yong-cheng-shi-fang-fa-jie-jue-zi-ji-de-wen-ti.html</loc>
+<loc>./wo-men-ru-he-li-yong-cheng-shi-fang-fa-jie-jue-zi-ji-de-wen-ti.html</loc>
 <lastmod>2016-07-12T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/xue-xi-xie-dian-nao-cheng-shi-de-mu-de-yu-yi-yi.html</loc>
+<loc>./xue-xi-xie-dian-nao-cheng-shi-de-mu-de-yu-yi-yi.html</loc>
 <lastmod>2016-03-30T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/wei-xiao-hai-zhun-bei-yi-tai-dian-nao.html</loc>
+<loc>./wei-xiao-hai-zhun-bei-yi-tai-dian-nao.html</loc>
 <lastmod>2016-03-24T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/reeborg-ji-qi-ren-de-liang-ge-shi-jie.html</loc>
+<loc>./reeborg-ji-qi-ren-de-liang-ge-shi-jie.html</loc>
 <lastmod>2016-03-20T11:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/all-time-cloud-computer-aided-mechanical-design-package.html</loc>
+<loc>./all-time-cloud-computer-aided-mechanical-design-package.html</loc>
 <lastmod>2016-03-20T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/introduction-to-codeforlife.html</loc>
+<loc>./introduction-to-codeforlife.html</loc>
 <lastmod>2016-03-19T11:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/how-to-setup-an-dynamic-and-static-blog.html</loc>
+<loc>./how-to-setup-an-dynamic-and-static-blog.html</loc>
 <lastmod>2016-03-19T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/digital-computation-museum.html</loc>
+<loc>./digital-computation-museum.html</loc>
 <lastmod>2016-03-06T12:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/about-adult-coding-education.html</loc>
+<loc>./about-adult-coding-education.html</loc>
 <lastmod>2016-03-06T11:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/about-kids-coding-education.html</loc>
+<loc>./about-kids-coding-education.html</loc>
 <lastmod>2016-03-06T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/code4future-user-wen-zhang-tao-gao.html</loc>
+<loc>./code4future-user-wen-zhang-tao-gao.html</loc>
 <lastmod>2016-02-25T12:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/how-to-manage-kids-internet-use.html</loc>
+<loc>./how-to-manage-kids-internet-use.html</loc>
 <lastmod>2016-02-25T11:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/why-everybody-should-learn-to-code.html</loc>
+<loc>./why-everybody-should-learn-to-code.html</loc>
 <lastmod>2016-02-25T10:00:00+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/category/jia-chang.html</loc>
+<loc>./category/jia-chang.html</loc>
 <lastmod>2016-03-30T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/category/jia-chang-jiao-shi.html</loc>
+<loc>./category/jia-chang-jiao-shi.html</loc>
 <lastmod>2016-08-16T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/category/jiao-shi.html</loc>
+<loc>./category/jiao-shi.html</loc>
 <lastmod>2016-03-20T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/category/jiao-shi-she-hui-ren-shi.html</loc>
+<loc>./category/jiao-shi-she-hui-ren-shi.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/category/k-12.html</loc>
+<loc>./category/k-12.html</loc>
 <lastmod>2016-03-19T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/category/misc.html</loc>
+<loc>./category/misc.html</loc>
 <lastmod>2017-05-27T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/category/she-hui-ren-shi.html</loc>
+<loc>./category/she-hui-ren-shi.html</loc>
 <lastmod>2017-05-24T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/category/zhuan-ti-yan-jiu.html</loc>
+<loc>./category/zhuan-ti-yan-jiu.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/markdown.html</loc>
+<loc>./tag/markdown.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/leo-editor.html</loc>
+<loc>./tag/leo-editor.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/github.html</loc>
+<loc>./tag/github.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/slug.html</loc>
+<loc>./tag/slug.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/pelican.html</loc>
+<loc>./tag/pelican.html</loc>
 <lastmod>2017-11-07T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/static-html.html</loc>
+<loc>./tag/static-html.html</loc>
 <lastmod>2017-11-07T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/domain.html</loc>
+<loc>./tag/domain.html</loc>
 <lastmod>2017-11-05T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/app.html</loc>
+<loc>./tag/app.html</loc>
 <lastmod>2017-05-27T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/curriculum.html</loc>
+<loc>./tag/curriculum.html</loc>
 <lastmod>2017-05-27T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/career-planning.html</loc>
+<loc>./tag/career-planning.html</loc>
 <lastmod>2017-05-24T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/children.html</loc>
+<loc>./tag/children.html</loc>
 <lastmod>2017-05-24T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/innovation.html</loc>
+<loc>./tag/innovation.html</loc>
 <lastmod>2017-05-24T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/science.html</loc>
+<loc>./tag/science.html</loc>
 <lastmod>2017-05-24T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/economy.html</loc>
+<loc>./tag/economy.html</loc>
 <lastmod>2017-05-24T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/stem.html</loc>
+<loc>./tag/stem.html</loc>
 <lastmod>2017-05-24T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/tech-future.html</loc>
+<loc>./tag/tech-future.html</loc>
 <lastmod>2017-05-24T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/cs.html</loc>
+<loc>./tag/cs.html</loc>
 <lastmod>2017-02-03T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/language.html</loc>
+<loc>./tag/language.html</loc>
 <lastmod>2017-02-03T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/programming.html</loc>
+<loc>./tag/programming.html</loc>
 <lastmod>2017-02-03T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/code.html</loc>
+<loc>./tag/code.html</loc>
 <lastmod>2016-08-16T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/communication.html</loc>
+<loc>./tag/communication.html</loc>
 <lastmod>2016-08-16T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/computer-science.html</loc>
+<loc>./tag/computer-science.html</loc>
 <lastmod>2016-08-16T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/future.html</loc>
+<loc>./tag/future.html</loc>
 <lastmod>2016-08-16T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/zhuan-ti-yan-jiu.html</loc>
+<loc>./tag/zhuan-ti-yan-jiu.html</loc>
 <lastmod>2016-07-24T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/dian-nao.html</loc>
+<loc>./tag/dian-nao.html</loc>
 <lastmod>2016-07-24T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/cao-zuo-xi-tong.html</loc>
+<loc>./tag/cao-zuo-xi-tong.html</loc>
 <lastmod>2016-07-24T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/qu-dong-cheng-shi.html</loc>
+<loc>./tag/qu-dong-cheng-shi.html</loc>
 <lastmod>2016-07-24T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/wang-zhan.html</loc>
+<loc>./tag/wang-zhan.html</loc>
 <lastmod>2016-07-21T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/hai-ke.html</loc>
+<loc>./tag/hai-ke.html</loc>
 <lastmod>2016-07-21T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/problem-solving.html</loc>
+<loc>./tag/problem-solving.html</loc>
 <lastmod>2016-07-19T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/tech-skill.html</loc>
+<loc>./tag/tech-skill.html</loc>
 <lastmod>2016-07-19T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/design.html</loc>
+<loc>./tag/design.html</loc>
 <lastmod>2016-07-18T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/fashion.html</loc>
+<loc>./tag/fashion.html</loc>
 <lastmod>2016-07-18T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/style.html</loc>
+<loc>./tag/style.html</loc>
 <lastmod>2016-07-18T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/trend.html</loc>
+<loc>./tag/trend.html</loc>
 <lastmod>2016-07-18T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/digital.html</loc>
+<loc>./tag/digital.html</loc>
 <lastmod>2016-07-18T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/transformation.html</loc>
+<loc>./tag/transformation.html</loc>
 <lastmod>2016-07-18T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/gong-ye-40.html</loc>
+<loc>./tag/gong-ye-40.html</loc>
 <lastmod>2016-07-18T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/wang-zhi-jia-gou.html</loc>
+<loc>./tag/wang-zhi-jia-gou.html</loc>
 <lastmod>2016-07-17T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/wordpress.html</loc>
+<loc>./tag/wordpress.html</loc>
 <lastmod>2016-07-17T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/godaddy.html</loc>
+<loc>./tag/godaddy.html</loc>
 <lastmod>2016-07-17T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/openshift.html</loc>
+<loc>./tag/openshift.html</loc>
 <lastmod>2016-07-17T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/game.html</loc>
+<loc>./tag/game.html</loc>
 <lastmod>2016-07-15T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/it-profession.html</loc>
+<loc>./tag/it-profession.html</loc>
 <lastmod>2016-07-15T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/pokemon-go.html</loc>
+<loc>./tag/pokemon-go.html</loc>
 <lastmod>2016-07-15T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/dao-yin.html</loc>
+<loc>./tag/dao-yin.html</loc>
 <lastmod>2016-03-30T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/mcad.html</loc>
+<loc>./tag/mcad.html</loc>
 <lastmod>2016-03-20T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/cad.html</loc>
+<loc>./tag/cad.html</loc>
 <lastmod>2016-03-20T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/shu-wei-yun-suan.html</loc>
+<loc>./tag/shu-wei-yun-suan.html</loc>
 <lastmod>2016-03-06T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/dian-nao-fa-zhan-shi.html</loc>
+<loc>./tag/dian-nao-fa-zhan-shi.html</loc>
 <lastmod>2016-03-06T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/dian-nao-ji-ben-gong-neng.html</loc>
+<loc>./tag/dian-nao-ji-ben-gong-neng.html</loc>
 <lastmod>2016-03-06T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/xie-tong-wang-zhi.html</loc>
+<loc>./tag/xie-tong-wang-zhi.html</loc>
 <lastmod>2016-02-25T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/wang-lu-cao-zuo.html</loc>
+<loc>./tag/wang-lu-cao-zuo.html</loc>
 <lastmod>2016-02-25T11:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/tag/reeborg-ji-qi-ren.html</loc>
+<loc>./tag/reeborg-ji-qi-ren.html</loc>
 <lastmod>2016-02-25T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/author/candirai.html</loc>
+<loc>./author/candirai.html</loc>
 <lastmod>2017-05-27T10:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/author/code4future.html</loc>
+<loc>./author/code4future.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.code4future.org/blog/author/user.html</loc>
+<loc>./author/user.html</loc>
 <lastmod>2017-11-07T12:00:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
