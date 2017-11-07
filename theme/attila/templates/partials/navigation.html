@@ -19,6 +19,8 @@
           {% endif %}
       {% endif %}
 
+            <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}">Archives</span></a></li>
+
       {% for name,link in SOCIAL if name in ['rss', 'rss-square', 'feed'] %}
         <li class="nav-rss"><a href="{{ link }}"><i class="ic ic-rss"></i> Subscribe</a></li>
       {% endfor %}

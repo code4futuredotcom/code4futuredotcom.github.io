@@ -91,6 +91,10 @@
 <v t="leo.20171105220232.1" a="E"><vh>@path attila</vh>
 <v t="leo.20171105220325.1" a="E"><vh>@path templates</vh>
 <v t="leo.20171105220255.1"><vh>@edit base.html</vh></v>
+<v t="leo.20171107154220.1"><vh>@edit search.html</vh></v>
+<v t="leo.20171107153729.1" a="E"><vh>@path partials</vh>
+<v t="leo.20171107153746.1"><vh>@edit navigation.html</vh></v>
+</v>
 </v>
 </v>
 </v>
@@ -204,6 +208,7 @@
 </v>
 <v t="leo.20171105103358.1" a="E"><vh>201711</vh>
 <v t="leo.20171105103424.1"><vh>@edit c4f_20171105.md</vh></v>
+<v t="leo.20171107150705.1"><vh>@edit c4f_20171107.md</vh></v>
 </v>
 </v>
 </v>
@@ -2185,5 +2190,6 @@ make.start()</t>
 <t tx="leo.20171105103358.1"></t>
 <t tx="leo.20171105220232.1"></t>
 <t tx="leo.20171105220325.1"></t>
+<t tx="leo.20171107153729.1"></t>
 </tnodes>
 </leo_file>
