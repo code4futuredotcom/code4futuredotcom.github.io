@@ -75,6 +75,10 @@
     <link href="{{ css }}" type="text/css" rel="stylesheet" />
     {% endfor %}
   {% endif %}
+  
+    {% if 'tipue_search' in PLUGINS %}
+    <link href="{{ SITEURL}}/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    {% endif %}
 
   <!-- Custom fonts -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
@@ -98,6 +102,13 @@
 
   <section id="wrapper">
     <a class="hidden-close"></a>
+
+<section class="search">
+      <form class="navbar-search" action="{{ SITEURL }}/search.html">
+      <input type="text"  placeholder="Search" name="q" id="tipue_search_input" required>
+    </form>
+</section>
+
       {% block content %}{% endblock content %}
       <!-- TODO : Body class -->
     <div id="body-class" style="display: none;" class="{{body_class}}"></div>
@@ -141,5 +152,8 @@
   {% endif %}
   {% include 'partials/analytics.js' %}
   {% include 'partials/disqus.js' %} 
+
+{% block scripts %}{% endblock %}
+
 </body>
 </html>

@@ -57,7 +57,7 @@
 <v t="leo.20151213085752.1"><vh>@edit local_publishconf.py</vh></v>
 </v>
 <v t="amd.20151215121740.1" a="E"><vh>@path theme</vh>
-<v t="amd.20151215121758.1"><vh>@path pelican-bootstrap3</vh>
+<v t="amd.20151215121758.1" a="E"><vh>@path pelican-bootstrap3</vh>
 <v t="amd.20151215121816.1" a="E"><vh>@path templates</vh>
 <v t="amd.20151215121827.1"><vh>@edit base.html</vh></v>
 <v t="amd.20151215121849.1"><vh>@edit search.html</vh></v>
@@ -71,7 +71,7 @@
 </v>
 </v>
 </v>
-<v t="amd.20151215154950.1"><vh>@path pelican-bootstrap3_local</vh>
+<v t="amd.20151215154950.1" a="E"><vh>@path pelican-bootstrap3_local</vh>
 <v t="amd.20151215154950.2" a="E"><vh>@path templates</vh>
 <v t="amd.20151215154950.3"><vh>@edit base.html</vh></v>
 <v t="amd.20151215154950.4"><vh>@edit search.html</vh></v>
@@ -92,6 +92,7 @@
 <v t="leo.20171105220325.1" a="E"><vh>@path templates</vh>
 <v t="leo.20171105220255.1"><vh>@edit base.html</vh></v>
 <v t="leo.20171107154220.1"><vh>@edit search.html</vh></v>
+<v t="leo.20171107170557.1"><vh>@edit archives.html</vh></v>
 <v t="leo.20171107153729.1" a="E"><vh>@path partials</vh>
 <v t="leo.20171107153746.1"><vh>@edit navigation.html</vh></v>
 </v>

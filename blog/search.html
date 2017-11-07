@@ -7,8 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-  <title>Search - Code4future
-</title>
+  <title>Code4future - Search</title>
 
 
   <meta name="HandheldFriendly" content="True" />
@@ -25,6 +24,8 @@
   <!-- Code highlight color scheme -->
       <link href="http://www.code4future.org/blog/theme/css/code_blocks/tomorrow_night.css" rel="stylesheet">
 
+  
+    <link href="http://www.code4future.org/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
 
   <!-- Custom fonts -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
@@ -54,10 +55,37 @@
     </ul>
   </div>
 </nav>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="blog-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="http://www.code4future.org/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Code4future - Archives</h1>
+            <div class="post-cover cover" style="background-image: url('http://www.code4future.org/blog/theme/images/post-bg.jpg')">
+      </div>
+    </header>
 
   <section id="wrapper">
     <a class="hidden-close"></a>
-<div id="tipue_search_content"></div>
+
+<section class="search">
+      <form class="navbar-search" action="http://www.code4future.org/blog/search.html">
+      <input type="text"  placeholder="Search" name="q" id="tipue_search_input" required>
+    </form>
+</section>
+
+  <article class="post">
+    <div class="inner">
+        <div id="tipue_search_content"></div>
+    </div>
+</article>
       <!-- TODO : Body class -->
     <div id="body-class" style="display: none;" class=""></div>
 
@@ -85,5 +113,22 @@
     }());
 </script>
  
+
+    <link href="http://www.code4future.org/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <script type="text/javascript" src="http://www.code4future.org/blog/theme/tipuesearch/tipuesearch_set.js"></script>
+    <script type="text/javascript" src="http://www.code4future.org/blog/theme/tipuesearch/tipuesearch.min.js"></script>
+    <!-- 導入 local Tipue search 所需要的 tipuesearch_content.js -->
+    <script type="text/javascript" src="http://www.code4future.org/blog/tipuesearch_content.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('#tipue_search_input').tipuesearch({
+        'mode' : 'static',
+        'show': 10,
+        'minimumLength': 2,
+        'newWindow': false
+      });
+    });
+    </script>
+
 </body>
 </html>
