@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Code4future - 教師, 社會人士</title><link href="http://www.code4future.com/blog/" rel="alternate"></link><link href="http://www.code4future.com/blog/feeds/jiao-shi-she-hui-ren-shi.atom.xml" rel="self"></link><id>http://www.code4future.com/blog/</id><updated>2017-11-07T12:00:00+08:00</updated><entry><title>建立網誌文章步驟</title><link href="http://www.code4future.com/blog/c4f-process-to-create-blog-post.html" rel="alternate"></link><published>2017-11-07T12:00:00+08:00</published><updated>2017-11-07T12:00:00+08:00</updated><author><name>Code4Future</name></author><id>tag:www.code4future.com,2017-11-07:/blog/c4f-process-to-create-blog-post.html</id><summary type="html">&lt;p&gt;Code4future 的網誌目前採靜態 html 格式, 並且寄存在 &lt;a href="https://github.com/code4futuredotcom/code4futuredotcom.github.io"&gt;https://github.com/code4futuredotcom/code4futuredotcom.github.io&lt;/a&gt;, 因此建立網誌文章的步驟, 就是編輯位於 Leo Editor 專案節點中的 Markdown 文章, 然後轉為近端格式後, 在近端瀏覽器中檢查格式是否正確後, 再轉為遠端格式後, 以 Git 指令, 新增、提交並推送到 Github 倉儲.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Code4future - 教師, 社會人士</title><link href="http://www.code4future.com/blog/" rel="alternate"></link><link href="http://www.code4future.com/blog/feeds/jiao-shi-she-hui-ren-shi.atom.xml" rel="self"></link><id>http://www.code4future.com/blog/</id><updated>2017-12-09T11:00:00+08:00</updated><entry><title>解救 Virtualbox vdi 無法開機</title><link href="http://www.code4future.com/blog/c4f-virtualbox-vdi-network-block-device-savior.html" rel="alternate"></link><published>2017-12-09T11:00:00+08:00</published><updated>2017-12-09T11:00:00+08:00</updated><author><name>Code4Future</name></author><id>tag:www.code4future.com,2017-12-09:/blog/c4f-virtualbox-vdi-network-block-device-savior.html</id><summary type="html">&lt;p&gt;當使用者面臨以 Virtualbox 開機的 Ubuntu 16.04 操作系統, 因為重要的 /boot 目錄下檔案, 在無意間全數被刪除後, 系統無法開機, 於是拯救行動開始.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;當使用者面臨以 Virtualbox 開機的 Ubuntu 16.04 操作系統, 因為重要的 /boot 目錄下檔案, 在無意間全數被刪除後, 系統無法開機, 於是拯救行動開始.&lt;/p&gt;
+
+
+&lt;h2&gt;回復 Vdi 開機檔案&lt;/h2&gt;
+&lt;p&gt;先講解決方案, 當然就是想個辦法, 回復能夠開機的狀態, 方法也許很多, 但是最簡單的方案來自 &lt;a href="https://unix.stackexchange.com/questions/145028/linux-recover-files-from-vdi-file"&gt;https://unix.stackexchange.com/questions/145028/linux-recover-files-from-vdi-file&lt;/a&gt;, 先利用 sudo apt install qemu-utils 安裝所需的套件, 然後假設希望解救的 vdi 位於 /home/user/vms/ubuntu160464.vdi, 且掛載 nbd 磁區後, 原先 /boot 資料與 /dev/nbd0p1 對應, 則下列指令可以將 /boot 的資料掛載到目前操作系統的 /mnt 中. 完成資料複製之後, 再利用 qemu-nbd 指令將磁區卸載.&lt;/p&gt;
+&lt;pre class="brush:jscript"&gt;
+sudo modprobe nbd max_part=16
+sudo qemu-nbd -c /dev/nbd0 /home/user/vms/ubuntu160464.vdi
+ls -lh /dev/nbd0*
+sudo mount /dev/nbd0p1 /mnt
+cp /boot/* /mnt/*
+sudo qemu-nbd -d /dev/nbd0
+&lt;/pre&gt;
+
+&lt;h2&gt;正確的開機磁區清理&lt;/h2&gt;
+&lt;p&gt;好, 至於正確的 /boot 目錄清理, 可以先以 uname -r 確認所啟動的系統版本後, 利用 sudo apt autoremove --purge 進行清理, 就如同 &lt;a href="https://askubuntu.com/questions/345588/what-is-the-safest-way-to-clean-up-boot-partition"&gt;https://askubuntu.com/questions/345588/what-is-the-safest-way-to-clean-up-boot-partition&lt;/a&gt; 的建議.&lt;/p&gt;</content><category term="virtualbox"></category><category term="nbd"></category></entry><entry><title>建立網誌文章步驟</title><link href="http://www.code4future.com/blog/c4f-process-to-create-blog-post.html" rel="alternate"></link><published>2017-11-07T12:00:00+08:00</published><updated>2017-11-07T12:00:00+08:00</updated><author><name>Code4Future</name></author><id>tag:www.code4future.com,2017-11-07:/blog/c4f-process-to-create-blog-post.html</id><summary type="html">&lt;p&gt;Code4future 的網誌目前採靜態 html 格式, 並且寄存在 &lt;a href="https://github.com/code4futuredotcom/code4futuredotcom.github.io"&gt;https://github.com/code4futuredotcom/code4futuredotcom.github.io&lt;/a&gt;, 因此建立網誌文章的步驟, 就是編輯位於 Leo Editor 專案節點中的 Markdown 文章, 然後轉為近端格式後, 在近端瀏覽器中檢查格式是否正確後, 再轉為遠端格式後, 以 Git 指令, 新增、提交並推送到 Github 倉儲.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Code4future 的網誌目前採靜態 html 格式, 並且寄存在 &lt;a href="https://github.com/code4futuredotcom/code4futuredotcom.github.io"&gt;https://github.com/code4futuredotcom/code4futuredotcom.github.io&lt;/a&gt;, 因此建立網誌文章的步驟, 就是編輯位於 Leo Editor 專案節點中的 Markdown 文章, 然後轉為近端格式後, 在近端瀏覽器中檢查格式是否正確後, 再轉為遠端格式後, 以 Git 指令, 新增、提交並推送到 Github 倉儲.&lt;/p&gt;
 
 

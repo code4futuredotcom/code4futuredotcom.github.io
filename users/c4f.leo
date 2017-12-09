@@ -20,7 +20,7 @@
 <v t="amd.20160306182104.1"><vh>內容分類</vh></v>
 </v>
 <v t="amd.20160309162721.1" a="E"><vh>Wordpress 端</vh>
-<v t="amd.20160309162721.2"><vh>@button new to wp (pelican)</vh>
+<v t="amd.20160309162721.2" a="E"><vh>@button new to wp (pelican)</vh>
 <v t="amd.20160309162721.3"><vh>md 檔案的格式</vh></v>
 <v t="amd.20160309162721.4"><vh>將 md 節點內容送到 Wordpress 方法</vh></v>
 </v>
@@ -219,6 +219,9 @@
 </v>
 <v t="leo.20171107221802.1" a="E"><vh>建立網誌文章步驟</vh>
 <v t="leo.20171107221504.1"><vh>@edit c4f_20171107-2.md</vh></v>
+</v>
+<v t="leo.20171209183029.1" a="E"><vh>解救 Virtualbox vdi 無法開機</vh>
+<v t="leo.20171209183145.1"><vh>@edit c4f_20171209.md</vh></v>
 </v>
 </v>
 </v>
@@ -538,9 +541,9 @@ metaWeblog.getPost (postid, username, password) returns struct(blog content)
 ~~~python 必須換為 [code lang="python"]
 ~~~ 則換為 [/code]
 
-然後再看看 &lt;a href="http://project.mde.tw"&gt;http://project.mde.tw&lt;/a&gt; 是否要直接採用 html anchor 或將
+然後再看看 &lt;a href="http://google.com"&gt;http://google.com&lt;/a&gt; 是否要直接採用 html anchor 或將
 
-Pelican 的 &lt;http://project.mde.tw&gt; 轉為 html anchor 格式
+Pelican 的 &lt;http://google.com&gt; 轉為 html anchor 格式
 
 此外, 將 .md 檔案的內容解讀後, 送到對應的 Wordpress 網站後, 將回傳在 .md 檔案的子節點, 加入一個"文章 id "的節點, 內文為該文章在 Wordpress 的 id 號碼
 
@@ -2206,5 +2209,6 @@ make.start()</t>
 <t tx="leo.20171107221815.1"></t>
 <t tx="leo.20171107221831.1"></t>
 <t tx="leo.20171107221852.1"></t>
+<t tx="leo.20171209183029.1">Houston, we have a problem</t>
 </tnodes>
 </leo_file>
