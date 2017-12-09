@@ -89,12 +89,28 @@
 </v>
 </v>
 <v t="leo.20171105220232.1" a="E"><vh>@path attila</vh>
+<v t="leo.20171209212426.1"><vh>@edit fabfile.py</vh></v>
 <v t="leo.20171105220325.1" a="E"><vh>@path templates</vh>
+<v t="leo.20171209212558.1"><vh>@edit archives.html</vh></v>
+<v t="leo.20171209212614.1"><vh>@edit article.html</vh></v>
+<v t="leo.20171209212633.1"><vh>@edit author.html</vh></v>
+<v t="leo.20171209212639.1"><vh>@edit authors.html</vh></v>
 <v t="leo.20171105220255.1"><vh>@edit base.html</vh></v>
+<v t="leo.20171209212508.1"><vh>@edit index.html</vh></v>
+<v t="leo.20171209212532.1"><vh>@edit page.html</vh></v>
 <v t="leo.20171107154220.1"><vh>@edit search.html</vh></v>
 <v t="leo.20171107170557.1"><vh>@edit archives.html</vh></v>
-<v t="leo.20171107153729.1" a="E"><vh>@path partials</vh>
+<v t="leo.20171107153729.1"><vh>@path partials</vh>
 <v t="leo.20171107153746.1"><vh>@edit navigation.html</vh></v>
+</v>
+</v>
+<v t="leo.20171209212740.1" a="E"><vh>@path static</vh>
+<v t="leo.20171209212748.1" a="E"><vh>@path css</vh>
+<v t="leo.20171209212808.1"><vh>@edit style.css</vh></v>
+<v t="leo.20171209213222.1"><vh>@edit style.min.css</vh></v>
+<v t="leo.20171209212834.1" a="E"><vh>@path code_blocks</vh>
+<v t="leo.20171209212909.1"><vh>@edit monokai.css</vh></v>
+</v>
 </v>
 </v>
 </v>
@@ -1323,7 +1339,7 @@ Author: code4future
 
 new-to-wp-button
 
-~~~python
+&lt;pre class="brush: python"&gt;
 #coding: utf-8
 import xmlrpc.client
 import datetime
@@ -1402,12 +1418,12 @@ c.redraw()
 
 g.es("post_id 為", post_id)
 g.es("已經送出資料!")
-~~~
+&lt;/pre&gt;
 
 
 edit-to-wp-button
 
-~~~python
+&lt;pre class="brush: python"&gt;
 #coding: utf-8
 import xmlrpc.client
 import datetime
@@ -1482,11 +1498,11 @@ if status:
     g.es("資料已經更新!")
 else:
     g.es("有問題, 資料沒有更新!")
-~~~
+&lt;/pre&gt;
 
 get-from-wp button
 
-~~~python
+&lt;pre class="brush: python"&gt;
 #coding: utf-8
 import xmlrpc.client
 # 導入 html 模組, 使用 html.unescape 轉換 html 特殊符號
@@ -1552,7 +1568,7 @@ p.b = line1 + line2 + line3 + line4 + line5 + post_content + "\n"
 # 因為節點資料更新, commander 必須 redraw
 c.redraw() 
 g.es("資料已經取回")
-~~~
+&lt;/pre&gt;
 </t>
 <t tx="amd.20160712231633.1"></t>
 <t tx="amd.20160715215651.1">@language md
@@ -2210,5 +2226,8 @@ make.start()</t>
 <t tx="leo.20171107221831.1"></t>
 <t tx="leo.20171107221852.1"></t>
 <t tx="leo.20171209183029.1">Houston, we have a problem</t>
+<t tx="leo.20171209212740.1"></t>
+<t tx="leo.20171209212748.1"></t>
+<t tx="leo.20171209212834.1"></t>
 </tnodes>
 </leo_file>

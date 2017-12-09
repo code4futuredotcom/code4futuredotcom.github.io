@@ -98,6 +98,56 @@
   "description": "靜態網頁的流行不僅是全球資訊網歸樸返真的一種表現, 也是 Html5 + Javascript 全面主導瀏覽器端檔案文件的證明."
 }
 </script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "./../data/syntaxhighlighter/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "./../data/syntaxhighlighter/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
 </head>
 <!-- TODO : Body class -->
 <body class="home-template">
@@ -173,123 +223,123 @@
 <h3>建立 Windows 可攜程式環境</h3>
 <p>首先安裝 python 3.6.3, 接著建立啟動與關閉可攜系統的批次檔案, start.bat 與 stop.bat</p>
 <p>start.bat</p>
-<div class="highlight"><pre><span></span><span class="nd">@echo</span> <span class="n">off</span>
-<span class="n">REM</span> <span class="err">設定</span> <span class="n">y</span> <span class="err">硬碟代號與</span> <span class="n">data</span> <span class="err">目錄對應</span>
-<span class="nb">set</span> <span class="n">Disk</span><span class="o">=</span><span class="n">y</span>
-<span class="n">subst</span> <span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span> <span class="s2">&quot;data&quot;</span>
-<span class="n">REM</span> <span class="err">設定</span> <span class="n">leo</span> <span class="err">相關對應</span> <span class="n">Home</span> <span class="err">位置</span>
-<span class="nb">set</span> <span class="n">HomePath</span><span class="o">=%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">home</span>
-<span class="nb">set</span> <span class="n">HomeDrive</span><span class="o">=%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">home</span>
-<span class="nb">set</span> <span class="n">Home</span><span class="o">=%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">home</span>
-<span class="n">REM</span> <span class="err">將系統</span> <span class="n">Python</span> <span class="err">程式的</span> <span class="n">io</span> <span class="err">設為</span> <span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
-<span class="nb">set</span> <span class="n">PYTHONIOENCODING</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span>
-<span class="n">REM</span> <span class="err">將後續的指令執行</span><span class="p">,</span> <span class="err">以</span> <span class="o">%</span><span class="n">Disk</span><span class="o">%</span> <span class="err">為主</span>
-<span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>
-<span class="n">REM</span> <span class="err">設定</span> <span class="n">PYTHONPATH</span>
-<span class="nb">set</span> <span class="n">PYTHONPATH</span><span class="o">=%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">python36</span>
-<span class="n">REM</span> <span class="err">設定</span> <span class="n">Leo</span> <span class="err">所用的編輯器</span>
-<span class="nb">set</span> <span class="n">LEO_EDITOR</span><span class="o">=%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">wscite</span>\<span class="n">SciTE</span><span class="o">.</span><span class="n">exe</span>
-<span class="n">REM</span> <span class="k">for</span> <span class="n">fossil</span> <span class="n">https</span> <span class="err">連線設定</span>
-<span class="n">REM</span> <span class="err">若在近端使用</span> <span class="n">fossil</span> <span class="n">ui</span> <span class="err">則要蓋掉</span>
-<span class="n">REM</span> <span class="nb">set</span> <span class="n">HTTPS</span><span class="o">=</span><span class="n">on</span>
-<span class="n">REM</span> <span class="err">指令搜尋路徑設定</span>
-<span class="nb">set</span> <span class="n">path1</span><span class="o">=%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:;</span><span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">python36</span><span class="p">;</span><span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">git</span>\<span class="nb">bin</span><span class="p">;</span>
-    <span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">python36</span>\<span class="n">Scripts</span><span class="p">;</span><span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">Git</span>\<span class="nb">bin</span><span class="p">;</span>
-<span class="n">path</span><span class="o">=%</span><span class="n">path1</span><span class="o">%</span><span class="p">;</span>
-<span class="n">start</span> <span class="o">/</span><span class="n">MIN</span> <span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">wscite</span>\<span class="n">SciTE</span><span class="o">.</span><span class="n">exe</span>
-<span class="n">start</span> <span class="o">/</span><span class="n">MIN</span> <span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">wscite</span>\<span class="n">SciTE</span><span class="o">.</span><span class="n">exe</span>
-<span class="n">start</span> <span class="o">/</span><span class="n">MIN</span> <span class="n">cmd</span><span class="o">.</span><span class="n">exe</span>
-<span class="n">start</span> <span class="o">/</span><span class="n">MIN</span> <span class="n">cmd</span><span class="o">.</span><span class="n">exe</span>
-<span class="n">REM</span> <span class="err">啟動</span> <span class="n">Leo</span> <span class="err">編輯器</span>
-<span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">Python36</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">launchLeo</span><span class="o">.</span><span class="n">py</span>
-<span class="n">REM</span> <span class="err">啟動</span> <span class="n">stunnel</span>
-<span class="n">REM</span> <span class="n">start</span> <span class="o">/</span><span class="n">MIN</span> <span class="n">fossil</span><span class="o">.</span><span class="n">exe</span> <span class="n">server</span> <span class="o">-</span><span class="n">P</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8080</span>
-    <span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span>\<span class="n">tmp</span>\<span class="n">fossil_repo</span>
-<span class="n">REM</span> <span class="n">start</span> <span class="o">/</span><span class="n">MIN</span> <span class="n">stunnel</span><span class="o">.</span><span class="n">exe</span>
-<span class="n">Exit</span>
-</pre></div>
-
+<pre class="brush: jscript">
+@echo off
+REM 設定 y 硬碟代號與 data 目錄對應
+set Disk=y
+subst %Disk%: "data"
+REM 設定 leo 相關對應 Home 位置
+set HomePath=%Disk%:\home
+set HomeDrive=%Disk%:\home
+set Home=%Disk%:\home
+REM 將系統 Python 程式的 io 設為 utf-8
+set PYTHONIOENCODING="utf-8"
+REM 將後續的指令執行, 以 %Disk% 為主
+%Disk%:
+REM 設定 PYTHONPATH
+set PYTHONPATH=%Disk%:\python36
+REM 設定 Leo 所用的編輯器
+set LEO_EDITOR=%Disk%:\wscite\SciTE.exe
+REM for fossil https 連線設定
+REM 若在近端使用 fossil ui 則要蓋掉
+REM set HTTPS=on
+REM 指令搜尋路徑設定
+set path1=%Disk%:;%Disk%:\python36;%Disk%:\git\bin;
+    %Disk%:\python36\Scripts;%Disk%:\Git\bin;
+path=%path1%;
+start /MIN %Disk%:\wscite\SciTE.exe
+start /MIN %Disk%:\wscite\SciTE.exe
+start /MIN cmd.exe
+start /MIN cmd.exe
+REM 啟動 Leo 編輯器
+%Disk%:\Python36\python.exe %Disk%:\launchLeo.py
+REM 啟動 stunnel
+REM start /MIN fossil.exe server -P 127.0.0.1:8080
+    %Disk%:\tmp\fossil_repo
+REM start /MIN stunnel.exe
+Exit
+</pre>
 
 <p>stop.bat</p>
-<div class="highlight"><pre><span></span><span class="nd">@echo</span> <span class="n">off</span>
-<span class="nb">set</span> <span class="n">Disk</span><span class="o">=</span><span class="n">y</span>
-<span class="n">REM</span> <span class="err">關閉</span> <span class="n">SciTE</span>
-<span class="n">taskkill</span> <span class="o">/</span><span class="n">IM</span> <span class="n">SciTE</span><span class="o">.</span><span class="n">exe</span> <span class="o">/</span><span class="n">F</span>
-<span class="n">REM</span> <span class="err">關閉</span> <span class="n">python</span>
-<span class="n">taskkill</span> <span class="o">/</span><span class="n">IM</span> <span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="o">/</span><span class="n">F</span>
-<span class="n">taskkill</span> <span class="o">/</span><span class="n">IM</span> <span class="n">pythonw</span><span class="o">.</span><span class="n">exe</span> <span class="o">/</span><span class="n">F</span>
-<span class="n">path</span><span class="o">=%</span><span class="n">PATH</span><span class="o">%</span><span class="p">;</span>
-<span class="n">REM</span> <span class="err">終止虛擬硬碟與目錄的對應</span>
-<span class="n">subst</span> <span class="o">%</span><span class="n">Disk</span><span class="o">%</span><span class="p">:</span> <span class="o">/</span><span class="n">D</span>
-<span class="n">REM</span> <span class="err">關閉</span> <span class="n">cmd</span> <span class="err">指令視窗</span>
-<span class="n">taskkill</span> <span class="o">/</span><span class="n">IM</span> <span class="n">cmd</span><span class="o">.</span><span class="n">exe</span> <span class="o">/</span><span class="n">F</span>
-<span class="n">EXIT</span>
-</pre></div>
-
+<pre class="brush: jscript">
+@echo off
+set Disk=y
+REM 關閉 SciTE
+taskkill /IM SciTE.exe /F
+REM 關閉 python
+taskkill /IM python.exe /F
+taskkill /IM pythonw.exe /F
+path=%PATH%;
+REM 終止虛擬硬碟與目錄的對應
+subst %Disk%: /D
+REM 關閉 cmd 指令視窗
+taskkill /IM cmd.exe /F
+EXIT
+</pre>
 
 <p>接著下載 wscite 編輯器, 主要用來編輯文字檔案, 然後下載 Git, 最後在 Python 3.6.3 系統中安裝 PyQt5, pelican, bs4 (beatuifulsoup), 以及 Markdown 模組.</p>
 <p>python -m pip install pyqt5 pelican bs4 Markdown pillow</p>
 <p>最後從 <a href="https://github.com/leo-editor/leo-editor/releases">https://github.com/leo-editor/leo-editor/releases</a> 下載 Leo Editor 最新的原始碼, 放入 Python36/Lib/site-packages 目錄中就完成可攜系統的建立.</p>
 <h3>IPv4 WWW server</h3>
 <p>接著為了能夠在利用 Pelican 將 Markdown 格式的網誌轉為 html 後, 能夠在近端檢查內容, 利用下列 Python3 程式碼建立 https 協定的 WWW 伺服器:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">http.server</span><span class="o">,</span> <span class="nn">ssl</span>
+<pre class="brush: python">
+import os
+import subprocess
+import threading
+import http.server, ssl
 
-<span class="k">def</span> <span class="nf">domake</span><span class="p">():</span>
-    <span class="c1"># build directory</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;./../&quot;</span><span class="p">)</span>
-    <span class="n">server_address</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">5443</span><span class="p">)</span>
-    <span class="n">httpd</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">HTTPServer</span><span class="p">(</span><span class="n">server_address</span><span class="p">,</span> \
-        <span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">SimpleHTTPRequestHandler</span><span class="p">)</span>
-    <span class="n">httpd</span><span class="o">.</span><span class="n">socket</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">wrap_socket</span><span class="p">(</span><span class="n">httpd</span><span class="o">.</span><span class="n">socket</span><span class="p">,</span>
-             <span class="n">server_side</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-             <span class="n">certfile</span><span class="o">=</span><span class="s1">&#39;localhost.crt&#39;</span><span class="p">,</span>
-             <span class="n">keyfile</span><span class="o">=</span><span class="s1">&#39;localhost.key&#39;</span><span class="p">,</span>
-            <span class="n">ssl_version</span><span class="o">=</span><span class="n">ssl</span><span class="o">.</span><span class="n">PROTOCOL_TLSv1</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;5443 https server started&quot;</span><span class="p">)</span>
-    <span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+def domake():
+    # build directory
+    os.chdir("./../")
+    server_address = ('localhost', 5443)
+    httpd = http.server.HTTPServer(server_address, \
+        http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+             server_side=True,
+             certfile='localhost.crt',
+             keyfile='localhost.key',
+            ssl_version=ssl.PROTOCOL_TLSv1)
+    print(os.getcwd())
+    print("5443 https server started")
+    httpd.serve_forever()
 
-<span class="c1"># 利用執行緒執行 https 伺服器</span>
-<span class="n">make</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">domake</span><span class="p">)</span>
-<span class="n">make</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</pre></div>
-
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()
+</pre>
 
 <p>假如是在 IPv6 網路協定下, 則使用下列程式碼:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">socket</span>
-<span class="kn">import</span> <span class="nn">http.server</span><span class="o">,</span> <span class="nn">ssl</span>
+<pre class="brush: python">
+import os
+import subprocess
+import threading
+import socket
+import http.server, ssl
 
-<span class="k">class</span> <span class="nc">HTTPServerV6</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">HTTPServer</span><span class="p">):</span>
-    <span class="n">address_family</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">AF_INET6</span>
+class HTTPServerV6(http.server.HTTPServer):
+    address_family = socket.AF_INET6
 
-<span class="k">def</span> <span class="nf">domake</span><span class="p">():</span>
-    <span class="c1"># build directory</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;./../&quot;</span><span class="p">)</span>
-    <span class="n">ipv6_address</span> <span class="o">=</span> <span class="s1">&#39;::1&#39;</span>
-    <span class="n">server_address</span> <span class="o">=</span> <span class="p">(</span><span class="n">ipv6_address</span><span class="p">,</span> <span class="mi">6443</span><span class="p">)</span>
-    <span class="c1">#httpd = http.server.HTTPServer(server_address, \</span>
-        <span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">SimpleHTTPRequestHandler</span><span class="p">)</span>
-    <span class="n">httpd</span> <span class="o">=</span> <span class="n">HTTPServerV6</span><span class="p">(</span><span class="n">server_address</span><span class="p">,</span> \
-        <span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">SimpleHTTPRequestHandler</span><span class="p">)</span>
-    <span class="n">httpd</span><span class="o">.</span><span class="n">socket</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">wrap_socket</span><span class="p">(</span><span class="n">httpd</span><span class="o">.</span><span class="n">socket</span><span class="p">,</span>
-              <span class="n">server_side</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-              <span class="n">certfile</span><span class="o">=</span><span class="s1">&#39;localhost.crt&#39;</span><span class="p">,</span>
-              <span class="n">keyfile</span><span class="o">=</span><span class="s1">&#39;localhost.key&#39;</span><span class="p">,</span>
-              <span class="n">ssl_version</span><span class="o">=</span><span class="n">ssl</span><span class="o">.</span><span class="n">PROTOCOL_TLSv1</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;6443 https server started&quot;</span><span class="p">)</span>
-    <span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+def domake():
+    # build directory
+    os.chdir("./../")
+    ipv6_address = '::1'
+    server_address = (ipv6_address, 6443)
+    #httpd = http.server.HTTPServer(server_address, \
+        http.server.SimpleHTTPRequestHandler)
+    httpd = HTTPServerV6(server_address, \
+        http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+              server_side=True,
+              certfile='localhost.crt',
+              keyfile='localhost.key',
+              ssl_version=ssl.PROTOCOL_TLSv1)
+    print("6443 https server started")
+    httpd.serve_forever()
 
-<span class="c1"># 利用執行緒執行 https 伺服器</span>
-<span class="n">make</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">domake</span><span class="p">)</span>
-<span class="n">make</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</pre></div>
-
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()
+</pre>
 
 <h3>Git and Github</h3>
 <p>git 在 Windows 64 位元操作系統下的 client 程式, 可以從 <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> 下載. 這裡選擇下載 git 的可攜版本. </p>

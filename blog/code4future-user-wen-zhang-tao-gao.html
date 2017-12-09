@@ -94,6 +94,56 @@
   "description": "這裡可以放入文章的摘要內容"
 }
 </script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "./../data/syntaxhighlighter/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "./../data/syntaxhighlighter/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
 </head>
 <!-- TODO : Body class -->
 <body class="home-template">
@@ -169,17 +219,18 @@
 <p>文章內放入圖片:</p>
 <p><img src="https://www.google.com.tw/images/nav_logo242_hr.png" width="300"></img></p>
 <h1>引入程式碼</h1>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<pre class="brush: python">
+import math
 
-<span class="c1"># Pythagoras Theorem</span>
-<span class="k">def</span> <span class="nf">hypotenuse</span><span class="p">(</span><span class="n">side1</span><span class="p">,</span> <span class="n">side2</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">side1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">side2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+# Pythagoras Theorem
+def hypotenuse(side1, side2):
+    return math.sqrt(math.pow(side1, 2)+math.pow(side2, 2))
 
-<span class="n">side1</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">side2</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">hypotenuse</span><span class="p">(</span><span class="n">side1</span><span class="p">,</span> <span class="n">side2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="n">right</span> <span class="n">triangle</span> <span class="k">with</span> <span class="n">side1</span><span class="o">=</span><span class="s2">&quot;, side1, &quot;</span> <span class="ow">and</span> <span class="n">side2</span><span class="o">=</span><span class="s2">&quot;, side2, &quot;</span><span class="n">the</span> <span class="n">hypotenuse</span> <span class="ow">is</span><span class="p">:</span><span class="s2">&quot;, h)</span>
-</pre></div>
+side1 = 3
+side2 = 4
+h = hypotenuse(side1, side2)
+print(a right triangle with side1=", side1, " and side2=", side2, "the hypotenuse is:", h)
+</pre>
             </section>
 
             <section class="post-info">
