@@ -1,5 +1,6 @@
 <h1>About</h1>
-<h1>Run</h1>
+<p><a href="http://code4future.com">http://code4future.com</a> </p>
+<p></p><h1>Run</h1>
 <!-- 導入 brython 程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -38,7 +39,7 @@ function doSave(storage_id, filename){
 <script src="/static/sylvester.js"></script>
 <script src="/static/PrairieDraw.js"></script>
 </p>
-<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button></p>
+<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button><button id="snake">snake</button><button id="bsnake">bsnake</button></p>
 <p><!-- ######################  editor1 開始 ###################### --></p>
 <p><!-- 用來顯示程式碼的 editor 區域 --></p>
 <div id="kw_editor1" style="width: 600px; height: 300px;"></div>
@@ -133,5 +134,15 @@ rocflag_url = "https://gist.githubusercontent.com/code4futuredotcom/22090239b94f
 rocflag = button2(rocflag_url)
 doc["rocflag"].bind("click", rocflag.do)
 ################################## rocflag end
+### snake ###
+snake_url = "https://gist.githubusercontent.com/code4futuredotcom/2aac69dc9b80db0a702644b9465fa6e3/raw/ffda945573db93ddf2b132a2aa85b7adf6e354a8/snake.py"
+snake = button2(snake_url)
+doc["snake"].bind("click", snake.do)
+### snake ###
+### bsnake ###
+bsnake_url = "https://gist.githubusercontent.com/code4futuredotcom/2aac69dc9b80db0a702644b9465fa6e3/raw/ffda945573db93ddf2b132a2aa85b7adf6e354a8/bsnake.py"
+bsnake = button2(bsnake_url)
+doc["bsnake"].bind("click", bsnake.do)
+### bsnake ###
 </script>
 </p>
